@@ -5,7 +5,7 @@ import { minusculoValidator } from './minusculo.validator';
 import { NovoUsuario } from './novo-usuario';
 import { NovoUsuarioService } from './novo-usuario.service';
 import { UsuarioExisteService } from './usuario-existe.service';
-// import { usuarioSenhaIguaisValidator } from './usuario-senha-iguais.validator';
+import { usuarioSenhaIguaisValidator } from './usuario-senha-iguais.validator';
 
 @Component({
   selector: 'app-novo-usuario',
@@ -36,10 +36,10 @@ export class NovoUsuarioComponent implements OnInit {
 
         ],
         password: [''],
+      },
+      {
+        validators: [usuarioSenhaIguaisValidator],
       }
-      // {
-      //   validators: [usuarioSenhaIguaisValidator],
-      // }
     );
   }
 
